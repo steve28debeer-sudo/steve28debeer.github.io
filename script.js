@@ -38,6 +38,33 @@ const fruits = [
 
 let hiddenCardIndex = null;
 
+const rewardMessages = [
+  "⭐ Great Job!",
+  "🏆 Amazing!",
+  "🎉 Wow!",
+  "🍎 Fruit Star!"
+];
+
+function showReward(customMessage = null) {
+  const rewardPopup = document.getElementById("rewardPopup");
+  if (!rewardPopup) return;
+
+  const message = customMessage || rewardMessages[Math.floor(Math.random() * rewardMessages.length)];
+  rewardPopup.innerHTML = `
+    <div class="reward-burst">✨</div>
+    <div class="reward-message">${message}</div>
+    <div class="reward-subtext">Clap, clap, clap!</div>
+  `;
+
+  rewardPopup.classList.remove("show-reward");
+  void rewardPopup.offsetWidth;
+  rewardPopup.classList.add("show-reward");
+
+  setTimeout(() => {
+    rewardPopup.classList.remove("show-reward");
+  }, 1600);
+}
+
 function sayPrompt(text, displayId = "helloDisplay") {
   const display = document.getElementById(displayId);
   if (display) {
@@ -63,6 +90,7 @@ function showFruit(index) {
     <p><strong>Teacher chant:</strong> ${fruit.chant}</p>
     <p>Ask: “What fruit is it?”</p>
   `;
+  showReward();
 }
 
 function startHideGame() {
@@ -100,6 +128,7 @@ function revealCard(card) {
     card.innerHTML = fruitHTML(clickedIndex);
     document.getElementById("questionText").innerText = `⭐ Correct! It is ${fruits[clickedIndex].name}!`;
     document.getElementById("gameFeedback").innerText = "Great job! Say it loudly!";
+    showReward("🏆 Amazing!");
   } else {
     document.getElementById("gameFeedback").innerText = "Try again! Where is it?";
   }
@@ -119,6 +148,7 @@ function resetCards() {
 function showReview(index) {
   const fruit = fruits[index];
   document.getElementById("reviewAnswer").innerHTML = `It is <strong>${fruit.name}</strong>! ${fruit.chant}`;
+  showReward("🍎 Fruit Star!");
 }
 
 function buildPage() {
