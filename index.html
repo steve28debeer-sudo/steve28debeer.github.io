@@ -1,99 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fruit Fun Lesson</title>
-  <link rel="stylesheet" href="style.css">
-
-  <style>
-    .fruit-img {
-      width: 90px;
-      height: 90px;
-      object-fit: contain;
-      display: block;
-      margin-bottom: 8px;
-    }
-
-    .big-fruit-img {
-      width: 180px;
-      height: 180px;
-      object-fit: contain;
-      display: block;
-      margin: 0 auto 10px auto;
-    }
-
-    .fruit-card {
-      overflow: hidden;
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fruit Fun Kindergarten Demo</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <div class="floating floating-1">🍎</div>
+  <div class="floating floating-2">🍌</div>
+  <div class="floating floating-3">🌟</div>
+  <div class="floating floating-4">🍐</div>
 
-<header>
-  <h1>🍎 Fruit Fun! 🍌</h1>
-  <p>Kindergarten Demo Class</p>
-</header>
+  <header class="hero">
+    <div class="badge">15 Minute Online Demo</div>
+    <h1>🌈 Fruit Fun! 🍎🍊🍌</h1>
+    <p>Hello, little learners! Let’s sing, say, play and review.</p>
+  </header>
 
-<section class="lesson-box">
-  <h2>Today we will learn 5 fruits!</h2>
+  <main>
+    <section class="lesson-card welcome-card" id="hello">
+      <div class="section-label">1 minute</div>
+      <h2>👋 Hello Time!</h2>
+      <div class="teacher-talk">
+        <p><strong>Teacher says:</strong> Hello! Hello! How are you?</p>
+        <p><strong>Ask:</strong> What’s your name?</p>
+        <p><strong>Student answers:</strong> My name is ______. I’m happy!</p>
+      </div>
+      <div class="prompt-buttons">
+        <button onclick="sayPrompt('Hello! How are you?')">👋 Hello!</button>
+        <button onclick="sayPrompt('What is your name?')">🧒 Name?</button>
+        <button onclick="sayPrompt('I am happy!')">😊 I’m happy!</button>
+      </div>
+      <div id="promptDisplay" class="big-prompt">Tap a hello button!</div>
+    </section>
 
-  <div class="fruit-buttons">
-    <button onclick="showFruit('Apple', 'https://waapple.org/wp-content/uploads/2021/06/Untitled-design-20-e1745534545813-658x677.png')">Apple</button>
-    <button onclick="showFruit('Banana', 'https://fruitfortheoffice.co.uk/media/catalog/product/cache/22f8b13a74fce530a016d5f78df80ce0/b/a/banana_each_500x500_.png')">Banana</button>
-    <button onclick="showFruit('Orange', 'https://www.veggipedia.nl/_next/image?url=https%3A%2F%2Fveggipedia-cms.production.taks.zooma.cloud%2Fassets%2FUploads%2FProducts%2Fsinaasappel-fruit-veggipedia__FitMaxWzYwMCw2MDBd.png&w=3840&q=75')">Orange</button>
-    <button onclick="showFruit('Pear', 'https://www.stemilt.com/wp-content/uploads/2016/07/dAnjou.png')">Pear</button>
-    <button onclick="showFruit('Kiwi', 'https://file.hstatic.net/1000141988/article/green-kiwi-yellow-kiwi_e394bab959d6486aa6ef095a26652e6e.png')">Kiwi</button>
-  </div>
+    <section class="lesson-card song-card">
+      <div class="section-label">2 minutes</div>
+      <h2>🎵 Hello Song</h2>
+      <p>Press play on your song link or share audio. Students wave, clap and answer: “I’m good!”</p>
+      <a class="song-button" href="https://www.youtube.com/results?search_query=hello+song+kindergarten" target="_blank" rel="noopener">▶ Open Hello Song</a>
+      <div class="song-actions">
+        <span>👋 Wave</span><span>👏 Clap</span><span>😊 Smile</span>
+      </div>
+    </section>
 
-  <div id="display" class="display-box">
-    <span class="big-fruit">🌈</span>
-    <h2>Click a fruit!</h2>
-  </div>
-</section>
+    <section class="lesson-card song-card">
+      <div class="section-label">1 minute</div>
+      <h2>🍓 Fruit Song</h2>
+      <p>Quick fruit song before vocabulary. Students listen for fruit words.</p>
+      <a class="song-button fruit-song" href="https://www.youtube.com/results?search_query=fruit+song+kindergarten" target="_blank" rel="noopener">▶ Open Fruit Song</a>
+    </section>
 
-<section class="game-box">
-  <h2>🎴 Guess the Hidden Fruit!</h2>
-  <p>Look carefully. Press the button. One fruit will stay hidden!</p>
+    <section class="lesson-card vocab-card" id="vocab">
+      <div class="section-label">5 minutes</div>
+      <h2>🔤 Fruit + Letter Sounds</h2>
+      <p class="tiny-instruction">Click a fruit. Say the letter, sound and word together.</p>
 
-  <div class="card-row">
-    <div class="fruit-card" onclick="revealCard(this)">
-      <img class="fruit-img" src="https://waapple.org/wp-content/uploads/2021/06/Untitled-design-20-e1745534545813-658x677.png" alt="Apple">
-      Apple
-    </div>
+      <div class="fruit-buttons" id="fruitButtons"></div>
 
-    <div class="fruit-card" onclick="revealCard(this)">
-      <img class="fruit-img" src="https://fruitfortheoffice.co.uk/media/catalog/product/cache/22f8b13a74fce530a016d5f78df80ce0/b/a/banana_each_500x500_.png" alt="Banana">
-      Banana
-    </div>
+      <div id="display" class="display-box pop-box">
+        <div class="sparkle">✨</div>
+        <h2>Click a fruit!</h2>
+        <p>Teacher: “Look! What is it?”</p>
+      </div>
+    </section>
 
-    <div class="fruit-card" onclick="revealCard(this)">
-      <img class="fruit-img" src="https://www.veggipedia.nl/_next/image?url=https%3A%2F%2Fveggipedia-cms.production.taks.zooma.cloud%2Fassets%2FUploads%2FProducts%2Fsinaasappel-fruit-veggipedia__FitMaxWzYwMCw2MDBd.png&w=3840&q=75" alt="Orange">
-      Orange
-    </div>
+    <section class="lesson-card game-card" id="game">
+      <div class="section-label">4 minutes</div>
+      <h2>🎴 Game Time: Where is the Fruit?</h2>
+      <p>Look carefully! Press <strong>Hide One Fruit</strong>. Ask: “Where is apple?”</p>
 
-    <div class="fruit-card" onclick="revealCard(this)">
-      <img class="fruit-img" src="https://www.stemilt.com/wp-content/uploads/2016/07/dAnjou.png" alt="Pear">
-      Pear
-    </div>
+      <div class="game-controls">
+        <button onclick="startHideGame()">🎴 Hide One Fruit!</button>
+        <button onclick="resetCards()">🔄 Reset</button>
+      </div>
 
-    <div class="fruit-card" onclick="revealCard(this)">
-      <img class="fruit-img" src="https://file.hstatic.net/1000141988/article/green-kiwi-yellow-kiwi_e394bab959d6486aa6ef095a26652e6e.png" alt="Kiwi">
-      Kiwi
-    </div>
-  </div>
+      <h2 id="questionText" class="question-text">Look carefully!</h2>
+      <div class="card-row" id="cardRow"></div>
+      <div id="gameFeedback" class="feedback">Ready?</div>
+    </section>
 
-  <button onclick="flipCardsGame()">🎴 Flip the Cards!</button>
-  <button onclick="resetCards()">🔄 Reset</button>
+    <section class="lesson-card review-card" id="review">
+      <div class="section-label">2 minutes</div>
+      <h2>✅ Closing Review: What fruit is it?</h2>
+      <p>Click a picture and students answer loudly.</p>
+      <div class="review-grid" id="reviewGrid"></div>
+      <div id="reviewAnswer" class="review-answer">Ask: “What fruit is it?”</div>
+    </section>
 
-  <h2 id="questionText">Look carefully!</h2>
-</section>
+    <section class="lesson-card goodbye-card">
+      <div class="section-label">1 minute</div>
+      <h2>👋 Goodbye Song</h2>
+      <p>Students wave and say: “Goodbye teacher! Goodbye friends!”</p>
+      <a class="song-button goodbye-song" href="https://www.youtube.com/results?search_query=goodbye+song+kindergarten" target="_blank" rel="noopener">▶ Open Goodbye Song</a>
+      <div class="final-message">⭐ Great job! See you next time! ⭐</div>
+    </section>
+  </main>
 
-<footer>
-  <p>⭐ Great job, everyone! ⭐</p>
-</footer>
+  <footer>
+    <p>🍎 Apple • 🍊 Orange • 🍌 Banana • 🍐 Pear • 🥝 Kiwi</p>
+  </footer>
 
-<script src="script.js"></script>
-
+  <script src="script.js"></script>
 </body>
 </html>
