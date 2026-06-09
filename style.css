@@ -18,7 +18,9 @@ h1 {
   margin: 0;
 }
 
-.lesson-box, .game-box {
+.lesson-box,
+.game-box,
+.missing-game {
   background: white;
   margin: 25px auto;
   padding: 25px;
@@ -36,14 +38,15 @@ h1 {
 }
 
 button {
-  font-size: 26px;
-  padding: 20px;
+  font-size: 24px;
+  padding: 18px;
   border: none;
   border-radius: 20px;
   background-color: #8ecae6;
   color: white;
   cursor: pointer;
   transition: 0.2s;
+  margin: 8px;
 }
 
 button:hover {
@@ -60,6 +63,38 @@ button:hover {
 
 .big-fruit {
   font-size: 100px;
+}
+
+.card-row {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin: 25px 0;
+}
+
+.fruit-card {
+  width: 130px;
+  height: 150px;
+  background-color: #ffd166;
+  border-radius: 20px;
+  font-size: 28px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  box-shadow: 0 6px 10px rgba(0,0,0,0.2);
+}
+
+.hidden-card {
+  background-color: #8ecae6;
+  color: white;
+  font-size: 60px;
+}
+
+.hidden-card::before {
+  content: "❓";
 }
 
 footer {
