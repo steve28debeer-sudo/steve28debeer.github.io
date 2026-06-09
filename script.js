@@ -38,8 +38,11 @@ const fruits = [
 
 let hiddenCardIndex = null;
 
-function sayPrompt(text) {
-  document.getElementById("promptDisplay").innerText = text;
+function sayPrompt(text, displayId = "helloDisplay") {
+  const display = document.getElementById(displayId);
+  if (display) {
+    display.innerText = text;
+  }
 }
 
 function fruitHTML(index) {
