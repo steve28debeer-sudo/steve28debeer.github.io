@@ -5,6 +5,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Fruit Fun Lesson</title>
   <link rel="stylesheet" href="style.css">
+
+  <style>
+    .fruit-img {
+      width: 90px;
+      height: 90px;
+      object-fit: contain;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .big-fruit-img {
+      width: 180px;
+      height: 180px;
+      object-fit: contain;
+      display: block;
+      margin: 0 auto 10px auto;
+    }
+
+    .fruit-card {
+      overflow: hidden;
+    }
+  </style>
 </head>
 <body>
 
@@ -17,11 +39,11 @@
   <h2>Today we will learn 5 fruits!</h2>
 
   <div class="fruit-buttons">
-    <button onclick="showFruit('Apple', '🍎')">🍎 Apple</button>
-    <button onclick="showFruit('Banana', '🍌')">🍌 Banana</button>
-    <button onclick="showFruit('Orange', '🍊')">🍊 Orange</button>
-    <button onclick="showFruit('Pear', '🍐')">🍐 Pear</button>
-    <button onclick="showFruit('Kiwi', '🥝')">🥝 Kiwi</button>
+    <button onclick="showFruit('Apple', 'https://waapple.org/wp-content/uploads/2021/06/Untitled-design-20-e1745534545813-658x677.png')">Apple</button>
+    <button onclick="showFruit('Banana', 'https://fruitfortheoffice.co.uk/media/catalog/product/cache/22f8b13a74fce530a016d5f78df80ce0/b/a/banana_each_500x500_.png')">Banana</button>
+    <button onclick="showFruit('Orange', 'https://www.veggipedia.nl/_next/image?url=https%3A%2F%2Fveggipedia-cms.production.taks.zooma.cloud%2Fassets%2FUploads%2FProducts%2Fsinaasappel-fruit-veggipedia__FitMaxWzYwMCw2MDBd.png&w=3840&q=75')">Orange</button>
+    <button onclick="showFruit('Pear', 'https://www.stemilt.com/wp-content/uploads/2016/07/dAnjou.png')">Pear</button>
+    <button onclick="showFruit('Kiwi', 'https://file.hstatic.net/1000141988/article/green-kiwi-yellow-kiwi_e394bab959d6486aa6ef095a26652e6e.png')">Kiwi</button>
   </div>
 
   <div id="display" class="display-box">
@@ -35,11 +57,30 @@
   <p>Look carefully. Press the button. One fruit will stay hidden!</p>
 
   <div class="card-row">
-    <div class="fruit-card" onclick="revealCard(this)">🍎<br>Apple</div>
-    <div class="fruit-card" onclick="revealCard(this)">🍌<br>Banana</div>
-    <div class="fruit-card" onclick="revealCard(this)">🍊<br>Orange</div>
-    <div class="fruit-card" onclick="revealCard(this)">🍐<br>Pear</div>
-    <div class="fruit-card" onclick="revealCard(this)">🥝<br>Kiwi</div>
+    <div class="fruit-card" onclick="revealCard(this)">
+      <img class="fruit-img" src="https://waapple.org/wp-content/uploads/2021/06/Untitled-design-20-e1745534545813-658x677.png" alt="Apple">
+      Apple
+    </div>
+
+    <div class="fruit-card" onclick="revealCard(this)">
+      <img class="fruit-img" src="https://fruitfortheoffice.co.uk/media/catalog/product/cache/22f8b13a74fce530a016d5f78df80ce0/b/a/banana_each_500x500_.png" alt="Banana">
+      Banana
+    </div>
+
+    <div class="fruit-card" onclick="revealCard(this)">
+      <img class="fruit-img" src="https://www.veggipedia.nl/_next/image?url=https%3A%2F%2Fveggipedia-cms.production.taks.zooma.cloud%2Fassets%2FUploads%2FProducts%2Fsinaasappel-fruit-veggipedia__FitMaxWzYwMCw2MDBd.png&w=3840&q=75" alt="Orange">
+      Orange
+    </div>
+
+    <div class="fruit-card" onclick="revealCard(this)">
+      <img class="fruit-img" src="https://www.stemilt.com/wp-content/uploads/2016/07/dAnjou.png" alt="Pear">
+      Pear
+    </div>
+
+    <div class="fruit-card" onclick="revealCard(this)">
+      <img class="fruit-img" src="https://file.hstatic.net/1000141988/article/green-kiwi-yellow-kiwi_e394bab959d6486aa6ef095a26652e6e.png" alt="Kiwi">
+      Kiwi
+    </div>
   </div>
 
   <button onclick="flipCardsGame()">🎴 Flip the Cards!</button>
