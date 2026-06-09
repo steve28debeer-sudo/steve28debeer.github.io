@@ -1,64 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Fruit Fun Demo Lesson</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fruit Fun Lesson</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <header>
+<header>
     <h1>🍎 Fruit Fun! 🍌</h1>
-    <p>Kindergarten Demo Class – 15 Minutes</p>
-  </header>
+    <p>Learn the Fruits!</p>
+</header>
 
-  <section class="lesson-box">
-    <h2>Today we will learn 5 fruits!</h2>
+<section class="lesson-box">
 
-    <div class="fruit-grid">
-      <button onclick="showFruit('Apple', '🍎')">🍎 Apple</button>
-      <button onclick="showFruit('Banana', '🍌')">🍌 Banana</button>
-      <button onclick="showFruit('Orange', '🍊')">🍊 Orange</button>
-      <button onclick="showFruit('Pear', '🍐')">🍐 Pear</button>
-      <button onclick="showFruit('Kiwi', '🥝')">🥝 Kiwi</button>
+    <h2>Today's Fruits</h2>
+
+    <div class="fruit-buttons">
+        <button onclick="showFruit('Apple','🍎')">Apple</button>
+        <button onclick="showFruit('Banana','🍌')">Banana</button>
+        <button onclick="showFruit('Orange','🍊')">Orange</button>
+        <button onclick="showFruit('Pear','🍐')">Pear</button>
+        <button onclick="showFruit('Kiwi','🥝')">Kiwi</button>
     </div>
 
     <div id="display" class="display-box">
-      <span class="big-fruit">🌈</span>
-      <h2>Click a fruit!</h2>
-    </div>
-  </section>
-
-  <section class="missing-game">
-    <h2>❓ What fruit is missing?</h2>
-    <p>Look carefully! Then press the button.</p>
-
-    <div class="card-row" id="fruitCards">
-      <div class="fruit-card">🍎<br>Apple</div>
-      <div class="fruit-card">🍌<br>Banana</div>
-      <div class="fruit-card">🍊<br>Orange</div>
-      <div class="fruit-card">🍐<br>Pear</div>
-      <div class="fruit-card">🥝<br>Kiwi</div>
+        <span class="big-fruit">🌈</span>
+        <h2>Click a fruit!</h2>
     </div>
 
-    <button onclick="hideFruit()">Hide One Fruit!</button>
-    <button onclick="resetCards()">Show Fruits Again</button>
+</section>
 
-    <h2 id="questionText">Which fruit is missing?</h2>
-  </section>
+<section class="game-box">
 
-  <section class="game-box">
-    <h2>Teacher Says:</h2>
-    <p>“Show me the apple!”</p>
-    <p>“Touch the banana!”</p>
-    <p>“What fruit is orange?”</p>
-  </section>
+    <h2>🎴 Guess The Missing Fruit!</h2>
 
-  <footer>
-    <p>Great job, everyone! ⭐</p>
-  </footer>
+    <div class="card-row">
 
-  <script src="script.js"></script>
+        <div class="fruit-card" onclick="revealCard(this)">
+            🍎<br>Apple
+        </div>
+
+        <div class="fruit-card" onclick="revealCard(this)">
+            🍌<br>Banana
+        </div>
+
+        <div class="fruit-card" onclick="revealCard(this)">
+            🍊<br>Orange
+        </div>
+
+        <div class="fruit-card" onclick="revealCard(this)">
+            🍐<br>Pear
+        </div>
+
+        <div class="fruit-card" onclick="revealCard(this)">
+            🥝<br>Kiwi
+        </div>
+
+    </div>
+
+    <button onclick="flipCardsGame()">🎴 Flip The Cards!</button>
+
+    <button onclick="resetCards()">🔄 Reset</button>
+
+    <h2 id="questionText">
+        Look carefully!
+    </h2>
+
+</section>
+
+<footer>
+    ⭐ Great Job! ⭐
+</footer>
+
+<script src="script.js"></script>
+
 </body>
 </html>
