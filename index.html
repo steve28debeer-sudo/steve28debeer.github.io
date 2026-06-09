@@ -20,19 +20,47 @@
 
   <main>
     <section class="lesson-card welcome-card" id="hello">
-      <div class="section-label">1 minute</div>
-      <h2>👋 Hello Time!</h2>
+      <div class="section-label">30 seconds</div>
+      <h2>👋 Hello!</h2>
       <div class="teacher-talk">
-        <p><strong>Teacher says:</strong> Hello! Hello! How are you?</p>
-        <p><strong>Ask:</strong> What’s your name?</p>
-        <p><strong>Student answers:</strong> My name is ______. I’m happy!</p>
+        <p><strong>Teacher says:</strong> Hello!</p>
+        <p><strong>Student says:</strong> Hello, teacher!</p>
       </div>
       <div class="prompt-buttons">
-        <button onclick="sayPrompt('Hello! How are you?')">👋 Hello!</button>
-        <button onclick="sayPrompt('What is your name?')">🧒 Name?</button>
-        <button onclick="sayPrompt('I am happy!')">😊 I’m happy!</button>
+        <button onclick="sayPrompt('Hello!', 'helloDisplay')">👋 Hello!</button>
+        <button onclick="sayPrompt('Hello, teacher!', 'helloDisplay')">👩‍🏫 Hello Teacher!</button>
       </div>
-      <div id="promptDisplay" class="big-prompt">Tap a hello button!</div>
+      <div id="helloDisplay" class="big-prompt">Tap a hello button!</div>
+    </section>
+
+    <section class="lesson-card welcome-card" id="name">
+      <div class="section-label">1 minute</div>
+      <h2>🧒 What’s Your Name?</h2>
+      <div class="teacher-talk">
+        <p><strong>Teacher asks:</strong> What’s your name?</p>
+        <p><strong>Student answers:</strong> My name is ______.</p>
+      </div>
+      <div class="prompt-buttons">
+        <button onclick="sayPrompt('What is your name?', 'nameDisplay')">🧒 Name?</button>
+        <button onclick="sayPrompt('My name is ______.', 'nameDisplay')">⭐ My Name Is...</button>
+      </div>
+      <div id="nameDisplay" class="big-prompt">Tap a name button!</div>
+    </section>
+
+    <section class="lesson-card welcome-card" id="feelings">
+      <div class="section-label">1 minute</div>
+      <h2>😊 How Are You?</h2>
+      <div class="teacher-talk">
+        <p><strong>Teacher asks:</strong> How are you?</p>
+        <p><strong>Student answers:</strong> I’m happy!</p>
+        <p><strong>Student answers:</strong> I’m good!</p>
+      </div>
+      <div class="prompt-buttons">
+        <button onclick="sayPrompt('How are you?', 'feelingsDisplay')">😊 How Are You?</button>
+        <button onclick="sayPrompt('I am happy!', 'feelingsDisplay')">😀 I’m Happy!</button>
+        <button onclick="sayPrompt('I am good!', 'feelingsDisplay')">😄 I’m Good!</button>
+      </div>
+      <div id="feelingsDisplay" class="big-prompt">Tap a feeling button!</div>
     </section>
 
     <section class="lesson-card song-card">
@@ -82,7 +110,7 @@
     </section>
 
     <section class="lesson-card review-card" id="review">
-      <div class="section-label">2 minutes</div>
+      <div class="section-label">1 minute</div>
       <h2>✅ Closing Review: What fruit is it?</h2>
       <p>Click a picture and students answer loudly.</p>
       <div class="review-grid" id="reviewGrid"></div>
@@ -90,7 +118,7 @@
     </section>
 
     <section class="lesson-card goodbye-card">
-      <div class="section-label">1 minute</div>
+      <div class="section-label">30 seconds</div>
       <h2>👋 Goodbye Song</h2>
       <p>Students wave and say: “Goodbye teacher! Goodbye friends!”</p>
       <a class="song-button goodbye-song" href="https://www.youtube.com/results?search_query=goodbye+song+kindergarten" target="_blank" rel="noopener">▶ Open Goodbye Song</a>
