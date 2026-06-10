@@ -133,4 +133,36 @@
   <div id="rewardPopup" class="reward-popup" aria-live="polite"></div>
   <script src="script.js"></script>
 </body>
+
+<script>
+const ACCESS_CODE = "FRUITFUN2026";
+
+const enteredCode = sessionStorage.getItem("access");
+
+if (enteredCode !== ACCESS_CODE) {
+    const code = prompt("Please enter your access code:");
+
+    if (code === ACCESS_CODE) {
+        sessionStorage.setItem("access", code);
+    } else {
+        document.body.innerHTML = `
+            <div style="
+                display:flex;
+                justify-content:center;
+                align-items:center;
+                height:100vh;
+                font-family:Arial;
+                text-align:center;
+            ">
+                <div>
+                    <h1>🔒 Access Denied</h1>
+                    <p>Please purchase access to continue.</p>
+                </div>
+            </div>
+        `;
+        throw new Error("Access denied");
+    }
+}
+</script>
+  
 </html>
